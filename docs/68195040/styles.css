@@ -1,0 +1,337 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto',sans-serif;
+    user-select: none;
+}
+
+input:focus, textarea:focus {
+    outline: 0;
+}
+
+#phone {
+    height: 600px;
+    width: 350px;
+    border-radius: 50px;
+    position: absolute;
+    top: 600px;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    border-top: 90px solid;
+    border-right: 15px solid;
+    border-left: 15px solid;
+    border-bottom: 90px solid;
+    background-image: url("https://ioshacker.com/wp-content/uploads/2019/06/iOS-13-wallpaper.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.app {
+    box-shadow: 0 0 9px -4px #000;
+}
+
+#topbar {
+    padding: 0.3em;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 20px;
+    transform: translate(-4%,0) scale(0.9);
+    width: 370px;
+}
+
+#connection {
+    display: flex;
+    align-items: center;
+    width: 110px;
+    justify-content: space-around;
+}
+
+#battery {
+    display: flex;
+    align-items: center;
+    width: 110px;
+    justify-content: end;
+}
+
+#battery .bi-battery-full {
+    font-size: 23px;
+    margin-left: 5px;
+}
+
+#topbar .bi-wifi-2 {
+    font-size: 25px;
+    margin-top: -3px;
+}
+
+#time {
+    text-align: center;
+}
+
+#notification {
+    margin: 0;
+    position: absolute;
+    top: 365px;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%) scale(0);
+    transform: translate(-50%, -50%) scale(0);
+    height: 85px;
+    width: 315px;
+    background: #EDEBED;
+    border-radius: 10px;
+    z-index: 10000;
+    transition: all 0.5s;
+    box-shadow: 0 0 10px -1px #525252;
+    padding: 0.5em 0 0.5em 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#notification h1 {
+    font-size: 23px;
+}
+
+#appsOne {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+
+#instagramIcon, #verificationCode, #mailIcon {
+    margin: 20px;
+}
+
+.app {
+    font-size: 40px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    transition: all 0.2s;
+}
+
+.app:hover {
+    cursor: pointer;
+    filter: brightness(90%);
+}
+
+.bi-instagram, .bi-envelope-fill {
+    width: 40px;
+    height: 40px;
+    color: #fff;
+    font-family: sans-serif;
+}
+
+/* Instagram */
+
+#instagramIcon {
+    background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+}
+
+#instagramApp {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #EAEAEA;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition: all 0.3s;
+    transform: scale(0);
+    z-index: 99999;
+    text-align: center;
+}
+.instagramHeader {
+    font-family: 'Handlee', cursive;
+    font-size: 35px;
+}
+.instagramSecondHeader {
+    font-size: 15px;
+    width: 260px;
+    margin: 1em 0;
+}
+#instagramNameInput, #instagramEmail, #instagramNumberText {
+    font-size: 15px;
+    padding: 0.5em;
+    border: 1px solid #D1D1D1;
+    margin: 0.5em 0 0.5em 0;
+    width: 220px;
+}
+.instagramButton {
+    width: 236px;
+    font-size: 15px;
+    padding: 0.5em;
+    background: #3296F0;
+    color: #fff;
+    border: none;
+    margin: 0.5em 0;
+    transition: all 0.2s;
+}
+.instagramButton:hover {
+    filter: brightness(80%);
+    cursor: pointer;
+}
+#verificationCodeInstagramPage {
+    display: none;
+}
+#continueToInstagramAccount {
+    display: none;
+}
+
+#instagramAccount {
+    display: none;
+    justify-content: flex-start;
+    height: 100%;
+    width: 100%;
+    background: #f7f7f7;
+    flex-direction: column;
+    align-items: center;
+}
+#instagramName {
+    font-size: 20px;
+    text-align: left;
+    width: 85%;
+    padding: 20px 20px 15px 10px;
+    border-bottom: 1px solid gray;
+    height: 20px;
+    border-right: none;
+    border-top: none;
+    border-left: none;
+    background: none;
+}
+#profilePicture {
+    font-size: 35px;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #eae9e9;
+    border-radius: 100000px;
+    margin: 20px;
+    border: 1px solid #6f6e6e;
+    color: #6f6e6e;
+}
+#instagramPictureAndNumbers {
+    display: inherit;
+    width: 360px;
+}
+#numbers {
+    width: 225px;
+    height: 45px;
+    margin: 35px 0 0 0;
+}
+#userDescription {
+    width: 320px;
+    font-size: 13px;
+    border: none;
+    background: none;
+    resize: none;
+}
+.bi-table {
+    font-size: 25px;
+    border-bottom: 1px solid;
+    width: 90%;
+    margin-top: 0.5em;
+}
+#emptyImages {
+    color: #c7c7c7;
+    margin: 100px;
+    font-size: 14px;
+}
+
+/* Mail */
+#mailIcon {
+    background: linear-gradient(0deg, #05ffff 0%, #3cabe6 30%, #2763dc 70%);
+}
+#mailApp {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #f6f6f6;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    transition: all 0.3s;
+    transform: scale(0);
+    z-index: 99999;
+    text-align: center;
+}
+#mailHeader {
+    font-size: 25px;
+    padding: 20px;
+    background: #fff;
+    width: 88%;
+    z-index: 999;
+}
+#verificationCodeEmail {
+    display: none;
+}
+.email {
+    background: #fff;
+    width: 97%;
+    padding: 5px;
+    border-top: 1px solid #e6e6e6;
+}
+.emailHeader {
+    text-align: left;
+    margin: 10px;
+    font-size: 25px;
+}
+#verificationCodeEmailDescription, #erfolgreichAngemeldetDescription {
+    text-align: left;
+    margin: 10px;
+}
+
+#erfolgreichAngemeldet {
+    display: none;
+}
+
+/* Home Button */
+#homeButton {
+    position: absolute;
+    height: 60px;
+    width: 60px;
+    background: transparent;
+    z-index: 9999;
+    bottom: -107px;
+    border-radius: 100000px;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%) rotate(-10deg);
+    transform: translate(-50%, -50%) rotate(-10deg);
+    border: 1px outset;
+    cursor: pointer;
+}
+
+#slider{
+    white-space: nowrap;
+    position: relative;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    height:calc(100% - 30px);
+}
+.panel{
+    display:inline-block;
+    width:350px;
+}
+
+
+#appsTwo {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
