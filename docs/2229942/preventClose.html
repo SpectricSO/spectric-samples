@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prevent Close</title>
+  </head>
+  <body style="font-family: system-ui">
+    <div style="max-width: 800px; margin: auto; text-align: center;">
+      <h1>For this demonstration to work you must do two things:</h1>
+      <ul style="list-style-position: inside;">
+        <li>Enable popups</li>
+        <li>Duplicate this tab</li>
+      </ul>
+      <p>Once you have done that, try closing one of these tabs.</p>
+      <h2>
+        IF YOU WISH TO LEAVE, DO NOT TRY TO CLOSE THE WINDOW: the tabs will
+        duplicate infinitely and the browser will crash
+      </h2>
+      <p>
+        Instead, simply disable popups for this page, and close the tabs like
+        normal.
+      </p>
+    </div>
+    <script>
+      const bc = new BroadcastChannel("close-channel");
+      window.addEventListener("beforeunload", (e) => {
+        bc.postMessage("close");
+      });
+
+      bc.addEventListener("message", (event) => {
+        window.open(location.href, "_blank", "");
+      });
+    </script>
+  </body>
+</html>
